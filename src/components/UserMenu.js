@@ -16,7 +16,7 @@ function UserMenu(props) {
     return (
       <>
         <div className="lg:mr-6">
-          <button onClick={() => {handleShowWalletSelect(true);}} className="text-white bg-gray-500 hover:bg-white hover:text-gray-500 w-full px-8 border border-white rounded-md p-2" ><div className="text-center leading-none ">CONNECT<br/>WALLET</div></button>
+          <button onClick={(e) => {e.stopPropagation(); handleShowWalletSelect(true);}} className="text-white bg-gray-500 hover:bg-white hover:text-gray-500 w-full px-8 border border-white rounded-md p-2" ><div className="text-center leading-none ">CONNECT<br/>WALLET</div></button>
         </div>
       </>
     );

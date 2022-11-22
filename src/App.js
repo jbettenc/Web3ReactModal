@@ -69,7 +69,7 @@ function App() {
   return (
     <>
       <Router>
-        <div className={`flex flex-col relative min-h-screen max-h-screen bg-gray-500`}>
+        <div className={`flex flex-col relative min-h-screen max-h-screen bg-gray-bg-dark`}>
           <Navbar accountData={{ethAlias: ethAlias, ethAvatar: ethAvatar}} handleLoginType={handleLoginType} activePage={activePage} handleShowWalletSelect={handleShowWalletSelect} />
           <Routes>
             <>
@@ -78,14 +78,12 @@ function App() {
           </Routes>
         </div>
       </Router>
-      {showWalletSelect &&
-        <WalletSelect handleLoginType={handleLoginType} onClose={() => {
+      <WalletSelect open={showWalletSelect} handleLoginType={handleLoginType} onClose={() => {
           if(!account) {
             handleLoginType(null);
           }
           handleShowWalletSelect(false);
         }}/>
-      }
     </>
   );
 }
